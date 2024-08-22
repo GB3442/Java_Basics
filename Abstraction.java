@@ -7,13 +7,12 @@ package Abstraction;
 abstract class A{
     //abstract void show();             
 
-    void hello(){
+    void hello(){                                  // Here we commented show method
         System.out.println("Hello Java");
     }
 }
 public class Rule1 extends A {
-    // A a=new A();    we can not create object of Abstract class.
-
+   
 }
 
 ===================  RULE 2 ==========================
@@ -21,17 +20,17 @@ public class Rule1 extends A {
 
 package Abstraction;
 
- abstract class Ab{
-    abstract void print();  
+ abstract class Ab{               
+    abstract void print();         // here in Ab class abstract method is present then Ab class must be declared as abstract otherwise CE occoured.
 }
 
-abstract  class Rule2 extends  Ab{
+class Rule2 extends  Ab{
     void print(){
             System.out.println("Rule2");
     }
 
     public static void main(String[] args) {
-
+              new Rule2().print();      // Rule 2
     }
 }
 
@@ -67,6 +66,10 @@ public class Rule4  extends Test1{
       void display(){
           System.out.println("Rule 4");    // < == here in child class we have to give implementation body for abstract method
       }
+      public static void main(String[] args){
+        Rule4 r=new Rule4();
+          r.display();    // Rule4 
+    }
 }
 
 ===================  RULE 5 ==========================
@@ -80,9 +83,12 @@ abstract class Parent1{
 }
 
 public abstract class Rule5 extends Parent1{
-
     // Here no need to give implementation or body to parent class abstract methods.
     // here child class and parent class both are abstract class then no CE .
+
+    public static void main(String[] args){
+        
+    }
 }
 
 
